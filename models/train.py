@@ -15,6 +15,11 @@ from allennlp.training.optimizers import Optimizer
 from torch.nn import DataParallel
 from torch.nn.modules import BatchNorm2d
 from tqdm import tqdm
+import os
+import sys
+
+# 添加上级目录到搜索路径中
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from dataloaders.vcr import VCR, VCRLoader
 from utils.pytorch_misc import time_batch, save_checkpoint, clip_grad_norm, \
